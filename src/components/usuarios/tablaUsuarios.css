@@ -1,0 +1,76 @@
+
+.tablaUsuarios {
+    background-color: #30031bbd;
+    color: grey;
+    font-size: x-large;
+    border: none;
+    text-align: center;
+    border-radius: 8px;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+
+.tbodyUsu:hover{
+    transition: 0.3s;
+    background-color: #30031b;
+}
+
+.tbodyUsu{
+    border-bottom: 2px solid rgba(216, 103, 163, 0.737);
+    color: grey;
+}
+
+.estiloTR{
+    background-color:#30031b ;
+    color: rgb(216, 103, 164);
+}
+
+.botonEditUsu{
+  background-color: rgb(243, 243, 147);
+}
+
+.botonEditUsu:hover{
+  color:rgb(38, 35, 35);
+  transition: 0.3s;
+  background-color: rgb(237, 237, 81) ;
+}
+
+.botonElimUsu{
+  background-color: #e84e4e;
+}
+
+.botonElimUsu:hover{
+  color:rgb(38, 35, 35);
+  transition: 0.3s;
+  background-color: #f23030;
+}
+
+  @media (max-width: 767px) {
+
+    .tablaUsuarios th {
+      font-size: medium;
+    }
+  
+    .tablaUsuarios th, .tablaUsuarios td {
+      text-align: center;
+    }
+  
+    .tablaUsuarios tbody {
+      display: block;
+    }
+  
+    .tablaUsuarios tr {
+      margin-bottom: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .tablaUsuarios td {
+      width: 100%;
+      box-sizing: border-box;
+    }
+  }
+  
