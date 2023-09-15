@@ -1,0 +1,48 @@
+
+.tablaProductos{
+    background-color: #f977bcd0;
+    color: grey;
+    font-size: x-large;
+    border: none;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 8px;
+    max-width: 100%;
+}
+
+.tbodyProd{ 
+    border-bottom: 2px solid rgb(190, 64, 131);
+    color: #412d38;
+}
+
+.tbodyProd:hover{
+    transition: 0.3s;
+    background-color: #f977bc;
+}
+
+.trProd{
+    background-color: rgb(190, 64, 131);
+    color: #30031b;
+}
+
+.botonEditProd{
+    background-color: rgb(243, 243, 147);
+  }
+  
+  .botonEditProd:hover{
+    color:rgb(38, 35, 35);
+    transition: 0.3s;
+    background-color: rgb(237, 237, 81) ;
+  }
+  
+  .botonElimProd{
+    background-color: #e84e4e;
+  }
+  
+  .botonElimProd:hover{
+    color:rgb(38, 35, 35);
+    transition: 0.3s;
+    background-color: #f23030;
+  }
