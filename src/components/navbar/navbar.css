@@ -1,0 +1,94 @@
+.navbarPag {
+    background-color: rgba(245, 245, 245, 0);
+    position: fixed;
+    top: 0;
+    /* border: 2px solid green; */
+    width: 100%;
+    z-index: 2;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .navbarPag.solid{
+      background-color: rgba(48, 3, 27, 0.876);
+  }
+  
+  .navbarPag:hover{
+      transition: 0.3 ease-in-out;
+      background-color: rgba(48, 3, 27, 0.900);
+  }
+  
+  .logoutBot {
+    /* background-color:rgba(249, 119, 188, 0.516) ; */
+    color: rgb(249, 119, 188) !important;
+  }
+  
+  .logoutBot:hover {
+    transition: 0.3s !important;
+    color: rgb(250, 173, 214) !important;
+  }
+  
+  .nav-link {
+    color: rgb(249, 119, 188);
+  }
+  
+  .nav-link:hover {
+      color: rgb(250, 173, 214) !important;
+    }
+  
+  #basic-nav-dropdown {
+    color: rgb(249, 119, 188);
+  }
+  
+  .contenedorImgLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1200px;
+  }
+  
+  .logoLumar {
+    width: 10rem;
+    height: 5rem;
+    /* margin-left: 200px; */
+  
+  }
+  
+  .logoLumar img {
+    height: 150%;
+  }
+  
+  .navbar-brand.d-flex.align-items-center {
+    height: 100%;
+  }
+  
+  .iconoLogin{
+    color: rgb(249, 119, 188);
+  }
+  
+  .iconoLogin:hover{
+   color: rgb(250, 173, 214);
+  }
+  
+  .contenedorHeaderLog{
+    background-color: rgb(250, 173, 214);
+  }
+  
+  .pincel{
+    height: 80px;
+  }
+  
+  .contenedorBodyLog{
+    background-color: rgba(48, 3, 27);
+    border-radius:5px;
+    color:rgb(249, 119, 188);
+  }
+  
+  @media (min-width: 360px) and (max-width: 599px){
+    .contenedorImgLogo {
+      /* display: flex; */
+      justify-content: start;
+      /* align-items: center;
+      width: 100%; */
+      margin-left: -12px;
+    }
+  }

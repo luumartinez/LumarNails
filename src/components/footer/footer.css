@@ -1,0 +1,108 @@
+.contenedorFooter {
+    background-color: rgb(48, 3, 27);
+    position: sticky;
+    top: 0;
+    /* border: 2px solid green; */
+    width:100%;
+    z-index: 2;
+    display: inline-block;
+    justify-content: space-around;
+    color: antiquewhite;
+    overflow-x: hidden;
+    margin-bottom: -8px;
+  }
+  
+  .colum1, .colum2, .colum3 {
+    width: 33%;
+  
+  }
+  
+  .titCol3{
+    text-align: center;
+  }
+  
+  .logoUbi{
+      height: 20px;
+      margin-right: 5px;
+  }
+  
+  
+  .logoFoot {
+    width: 70%;
+  }
+  
+  .logoFb{
+      height: 30px;
+      margin-left: 20px;
+      transition: 0.3s;
+  }
+  
+  .logoFb:hover{
+      color:rgb(244, 155, 202);
+      cursor: pointer;
+  }
+  
+  .logoIg{
+      height: 33px;
+      margin-left: 20px;
+      transition: 0.3s;
+  }
+  
+  .logoIg:hover{
+      color: rgb(244, 155, 202);
+      cursor: pointer;
+  }
+  .direccion{
+    text-decoration: none;
+    color:antiquewhite
+  }
+  .direccion:hover{
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  
+  @media (min-width: 360px) and (max-width: 599px){
+    .colum1, .colum3 {
+      width: 45%;
+      /* display: block;
+      justify-content: center;
+      align-items: center; */
+      text-align: center;
+      /* flex-direction: column; */
+    }
+  
+    .colum2{
+      width: 10%;
+    }
+  
+    .titCol1{
+      font-size: large;
+    }
+  
+    .logoUbi{
+      margin-right: -10px;
+      margin-left: 15px;
+    }
+  
+    .direccion{
+      font-size: medium;
+      text-align: center;
+      width: 100%;
+    }
+  
+    .titCol3{
+      font-size: medium;
+    }
+  
+    .logoFb{
+      margin-top: -5px;
+      margin-bottom: 5px;
+      height: 25px;
+    }
+  
+    .logoIg{
+      margin-top: -5px;
+      margin-bottom: 5px;
+      height: 25px;
+    }
+  }

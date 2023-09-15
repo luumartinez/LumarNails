@@ -1,0 +1,8 @@
+.contenedorClima{
+    display: flex;
+    justify-content: column;
+    align-items: column;
+    margin-left: 20px;
+    width: 25%;
+    border: 2px solid grey;
+}
