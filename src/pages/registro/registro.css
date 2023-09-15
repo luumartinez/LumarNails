@@ -1,0 +1,116 @@
+.contenedorPagRegistro {
+    background: linear-gradient(to bottom, #30031b, #f977bc);
+    min-height: 87.5vh;
+    padding: 0;
+  }
+  
+  .contendorRegistro {
+    background-color: #ffc3e33c;
+    display: inline-flex;
+    text-align: center;
+    color: rgb(52, 52, 52);
+    border-radius: 10px;
+    width: 80%;
+    margin: 9%;
+    margin-bottom: 0;
+  }
+  
+  .contenedorFormReg {
+    width: 45%;
+    margin:2%;
+  }
+  
+  .contenedorBotonReg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+  }
+  
+  .botonReg {
+    background-color: rgb(216, 103, 164);
+    border-radius: 10px;
+    text-decoration: none;
+    color: rgb(52, 52, 52);
+    width: 50%;
+    border: none;
+    font-weight: bolder;
+  }
+  
+  .botonReg:hover {
+    background-color: rgb(244, 155, 202);
+    box-shadow: 2px 2px 2px rgb(249, 119, 188);
+    transition: 0.2s;
+  }
+  
+  .contenedorVideoReg {
+    width: 60%;
+    height: 415px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0px 10px 10px 0px;
+  }
+  
+  .videoReg {
+    width: 100%;
+    height: 100%; 
+    object-fit: cover; 
+    position: absolute; 
+    top: 0; 
+    left: 0;
+  }
+  
+  .errorMensaje{
+      font-size: small;
+      color: #30031b;
+      display: flex;
+      position: absolute;
+  }
+  
+  @media (min-width: 360px) and (max-width: 599px){
+      .contenedorVideoReg{
+          display:none;
+      }
+  
+      .contendorRegistro{
+          width: 100%;
+          margin: 0;
+          margin-top: 50%;
+          height: 450px;
+      }
+  
+      .contenedorFormReg{
+          width: 100%;
+          display: block;
+          justify-content: center;
+          align-items: center;
+          margin-top: 12%;
+      }
+  }
+  
+  @media (min-width: 760px) and (max-width: 920px){
+  .contenedorPagRegistro{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  
+      .contendorRegistro{
+          width: 100%;
+          margin: 0;
+          margin-top: 18%;
+          display: block;
+          justify-content: center;
+          align-items: center;
+      }
+      
+      .contenedorFormReg{
+          width: 95.5%;
+      }
+  
+      .contenedorVideoReg{
+          width: 100%;
+          border-radius: 0px 0px 10px 10px;
+      }
+  
+  }

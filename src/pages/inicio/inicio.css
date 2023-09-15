@@ -1,0 +1,207 @@
+.contenedorPagPpal {
+    min-height: 100vh;
+    width: 100%;
+    margin:0;
+    padding: 0;
+    background-color: rgba(255, 192, 203, 0.5);
+  }
+  
+  .contenedorEncabezadoPpal {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    position: sticky;
+  }
+  
+  .contenedorVideo {
+    /* padding: 0; */
+    width: 100%;
+    /* height: 50rem; */
+  }
+  
+  .videoPpal {
+    width: 100%;
+  }
+  
+  .contendorPpalTitulo{
+    display:flex;
+    justify-content: end;
+  }
+  
+  .contenedorTitulo {
+    position:absolute;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: end;
+  }
+  
+  .tituloPpal {
+    color: rgb(249, 119, 188);
+    margin-top: 45%;
+    margin-right: 30px;
+    text-align: end;
+  }
+  
+  
+  .contenedorTarjetas {
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 31rem;
+    /* border: 2px solid green; */
+    margin-bottom: 10px;
+  }
+  
+  .card {
+    color: grey;
+    width: 35%;
+    height: max-content;
+    border: none;
+    border-radius: 10px;
+  }
+  
+  .card:hover {
+    transition: 0.3s ease-in-out;
+    width: 36.5%;
+    /* height: 98%; */
+  }
+  
+  .card-body {
+    height: max-content;
+  }
+  .contenedorBotonTarjeta{
+    display: flex;
+    justify-content: center;
+  }
+  
+  .botonTarjeta {
+    background-color: rgb(249, 119, 188);
+    border-radius: 10px;
+    text-decoration: none;
+    color: rgb(52, 52, 52);
+    width: 55%;
+    border: none;
+  }
+  
+  .botonTarjeta:hover {
+    background-color: rgb(244, 155, 202);
+    box-shadow: 5px 5px 5px rgb(249, 119, 188);
+    transition: 0.2s;
+  }
+  
+  
+  .tituloTendencias {
+    /* border:2px solid brown; */
+    color: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .imagenes1 {
+    display: inline-flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: start;
+    margin-bottom: 0;
+    /* border: 2px red solid; */
+  }
+  
+  .imagenes2 {
+    display: inline-flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: end;
+    margin-bottom: 2px;
+    /* border: 2px red solid; */
+  }
+  
+  .contenedorImg1 {
+    width: 35%;
+    filter: blur(3px);
+  }
+  
+  .contenedorImg1:hover {
+    filter: blur(0);
+    transition: 0.3s;
+  }
+  
+  .imagen1 {
+    width: 100%;
+  }
+  
+  .contenedorImg2 {
+    width: 35%;
+  }
+  
+  .imagen2 {
+    width: 100%;
+  }
+  
+  .contenedorImg3 {
+    width: 30%;
+  }
+  
+  .imagen3 {
+    width: 100%;
+  }
+  
+  .contenedorImg4 {
+    width: 30%;
+    filter: blur(3px);
+  }
+  
+  .contenedorImg4:hover {
+    filter: blur(0);
+    transition: 0.3s;
+  }
+  
+  .imagen4 {
+    width: 100%;
+  }
+  
+  .contenedorImg5 {
+    width: 30%;
+    filter: blur(3px);
+  }
+  
+  .contenedorImg5:hover {
+    filter: blur(0);
+    transition: 0.3s ease-in-out;
+  }
+  
+  .imagen5 {
+    width: 100%;
+    height: 99.4%;
+  }
+  
+  @media (min-width: 360px) and (max-width: 599px) {
+    .contenedorTarjetas {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+  
+    .card {
+      width: 90%;
+      max-width: 350px;
+      margin-bottom: 5px;
+    }
+    .card:hover{
+      width: 93%;
+      height: auto;
+      max-width: none;
+    }
+  
+    
+    .tituloPpal {
+      font-size:large;
+    }
+  }

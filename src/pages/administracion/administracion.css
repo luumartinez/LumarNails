@@ -1,0 +1,36 @@
+
+.contenedorPagAdm{
+    background: linear-gradient(to bottom, #30031b, #f977bc);
+    min-height: 87.5vh;
+    padding: 0;
+}
+
+.contenedorTitAdm{
+    display: inline-block;
+    justify-content: center;
+    text-align: center;
+    width: 80%;
+    margin: 9%;
+    margin-bottom: 0;
+}
+.tituloAdm{
+    color: rgb(216, 103, 164);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.contenedorTitTablaProd{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+@media (min-width: 340px) and (max-width: 600px){
+
+    .contenedorContenido{
+        margin-top: 30%;
+    }
+}
