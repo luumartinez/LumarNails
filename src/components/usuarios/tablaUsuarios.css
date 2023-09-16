@@ -46,6 +46,12 @@
   background-color: #f23030;
 }
 
+.bodyModalEditUsu{
+  background-color: rgba(48, 3, 27);
+  border-radius:5px;
+  color:rgb(249, 119, 188);
+}
+
   @media (max-width: 767px) {
 
     .tablaUsuarios th {

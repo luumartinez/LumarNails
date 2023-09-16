@@ -6,17 +6,36 @@ import FormEditarUsuario from "./FormEditarUsuario";
 import "./tablaUsuarios.css";
 
 const TablaUsuarios = () => {
-  const { usuarios } = useContext(UsuariosContexto);
+  const { usuarios, eliminarUsuario } = useContext(UsuariosContexto);
 
-  const [editarUsuario, seteditarUsuario] = useState()
+  const [editarUsu, seteditarUsuario] = useState()
 
   const handleDelete = (id) => {
-    // eliminarUsuario(id);
+   
     Swal.fire({
-      position: "center",
-      icon: "success",
-      title: "Usuario eliminado",
-    });
+      title: '¿Seguro que quieres eliminar este usuario?',
+      text: "Una vez eliminado, no podrás recuperarlo",
+      icon: 'warning',
+      showCancelButton: true,
+      background: "#fed9ed ",
+      color: "grey",
+      confirmButtonColor: '#e84e4e',
+      cancelButtonColor: '#2d7d97', 
+      confirmButtonText: 'Borrar',
+      cancelButtonText:'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) { 
+        eliminarUsuario(id);
+        Swal.fire({
+          title: 'Usuario eliminado con exito',
+          icon: 'success',
+          background: "#fed9ed ",
+          color: "grey",
+          showConfirmButton:false,
+          timer: 1200
+       })
+      }
+    })
   };
   const [show, setShow] = useState(false);
 
@@ -26,7 +45,7 @@ const TablaUsuarios = () => {
   const handleEdit = (usuario) =>{
     seteditarUsuario(usuario)
     handleShow()
-  }
+  };
 
   return (
     <>
@@ -47,6 +66,7 @@ const TablaUsuarios = () => {
                   <td>{usuario.nombre}</td>
                   <td>{usuario.apellido}</td>
                   <td>{usuario.email}</td>
+                  <td className="d-none">{usuario.rol}</td>
                   <td>
                     <button
                       className="btn botonEditUsu  m-1"
@@ -70,11 +90,8 @@ const TablaUsuarios = () => {
       </Container>
 
       <Modal show={show} onHide={handleClose}>
-      <Modal.Header closeButton>
-        <Modal.Title>EDICION DE USUARIO</Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-        <FormEditarUsuario editarProd={editarUsuario} handleClose={handleClose} />
+      <Modal.Body className="bodyModalEditUsu">
+        <FormEditarUsuario editarUsu={editarUsu} handleClose={handleClose}/>
       </Modal.Body>
     </Modal>
     </>

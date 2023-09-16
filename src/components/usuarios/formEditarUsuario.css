@@ -1,0 +1,15 @@
+.botonEditUsuario{
+    width: 75%;
+    background-color: rgb(249, 119, 188);
+    border-radius: 10px;
+    text-decoration: none;
+    color: rgb(52, 52, 52);
+    border: none;
+    font-weight:bolder;
+}
+
+.botonEditUsuario:hover{
+    background-color: rgb(244, 155, 202);
+    box-shadow: 2px 2px 2px rgb(249, 119, 188);
+    transition: 0.2s;
+}

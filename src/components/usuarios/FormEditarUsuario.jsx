@@ -1,13 +1,103 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { UsuariosContexto } from "../../context/UsuariosContext";
+import { Container, Row, Col, Button } from "react-bootstrap";
+import Swal from "sweetalert2";
+import './formEditarUsuario.css'
 
-const FormEditarUsuario = () => {
+const FormEditarUsuario = ({ editarUsu, handleClose }) => {
+  const [usuario, setUsuario] = useState(editarUsu);
 
+  const { editarUsuario } = useContext(UsuariosContexto);
 
-    return (
-        <>
-            <h1>USUARIOOOO</h1>
-        </>
-    );
+  const handleChange = (e) => {
+    setUsuario({ ...usuario, [e.target.name]: e.target.value });
+  };
+
+  const handleEdit = (e) => {
+    e.preventDefault();
+    editarUsuario();
+    Swal.fire({
+      title: "Cambios guardados con éxito",
+      icon: "success",
+      showConfirmButton: false,
+      timer: 1000,
+    });
+    handleClose();
+  };
+
+  return (
+    <>
+      <Container>
+        <Row>
+          <Col>
+            <form onSubmit={handleEdit}>
+              <div className="d-flex justify-content-end">
+              <h5 className="btn-close" onClick={handleClose}></h5>     </div>
+              <h1 className="d-flex justify-content-center">EDITAR USUARIO</h1>
+              <div className="mb-3">
+                <label htmlFor="nombre" className="form-label">
+                  Nombre
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  name="nombre"
+                  value={usuario.nombre}
+                  onChange={handleChange}
+                  aria-describedby="nombre"
+                ></input>
+              </div>
+              <div className="mb-3">
+                <label htmlFor="apellido" className="form-label">
+                  Apellido
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  name="apellido"
+                  value={usuario.apellido}
+                  onChange={handleChange}
+                  aria-describedby="apellido"
+                ></input>
+              </div>
+              <div className="mb-3">
+                <label htmlFor="email" className="form-label">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  className="form-control"
+                  name="email"
+                  value={usuario.email}
+                  onChange={handleChange}
+                  aria-describedby="email"
+                  disabled
+                ></input>
+              </div>
+              <div className="mb-3">
+                <label htmlFor="rol" className="form-label">
+                  Rol
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  name="rol"
+                  value={usuario.rol}
+                  onChange={handleChange}
+                  aria-describedby="rol"
+                ></input>
+              </div>
+              <div className="d-flex justify-content-center">
+              <Button type="submit" className="botonEditUsuario">
+                {" "}
+                Editar usuario{" "}
+              </Button></div>
+            </form>
+          </Col>
+        </Row>
+      </Container>
+    </>
+  );
 };
 
 export default FormEditarUsuario;

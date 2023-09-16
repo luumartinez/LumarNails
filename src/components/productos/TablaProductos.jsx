@@ -11,12 +11,30 @@ const TablaProductos = () => {
   const [editarProd, setEditarProd] = useState();
 
   const handleDelete = (id) => {
-    eliminarProducto(id);
     Swal.fire({
-      position: "center",
-      icon: "success",
-      title: "Producto eliminado",
-    });
+      title: '¿Seguro que quieres eliminar este producto?',
+      text: "Una vez eliminado, no podrás recuperarlo",
+      icon: 'warning',
+      showCancelButton: true,
+      background: "#fed9ed ",
+      color: "grey",
+      confirmButtonColor: '#e84e4e',
+      cancelButtonColor: '#2d7d97', 
+      confirmButtonText: 'Borrar',
+      cancelButtonText:'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) { 
+        eliminarProducto(id);
+        Swal.fire({
+          title: 'Producto eliminado con exito',
+          icon: 'success',
+          background: "#fed9ed ",
+          color: "grey",
+          showConfirmButton:false,
+          timer: 1200
+       })
+      }
+    })
   };
   const [show, setShow] = useState(false);
 

@@ -9,7 +9,7 @@ const UsersContext = ({ children }) => {
   const [usuarios, setUsuarios] = useState([]);
   const [usuarioIngresado, setUsuarioIngresado] = useState();
 
-
+// GET
   const mostrarUsuarios = async () => {
     try {
       const response = await axios.get(
@@ -20,7 +20,10 @@ const UsersContext = ({ children }) => {
       console.log(error);
     }
   };
- 
+
+
+  // POST
+
   const login = async (email, password) => {
     try {
       const response = await axios.post(
@@ -87,15 +90,31 @@ const UsersContext = ({ children }) => {
     });
   };
 
-  // const editarUsuario = async(id) =>{
-  //   try {
-  //     await axios.put()
-  //   } catch (
-  //   ) {
-      
-  //   }
 
-  // }
+  // PUT
+  
+  const editarUsuario = async(usuario) =>{
+    try {
+      await axios.put(`http://localhost:8081/api/usuarios/editUsuario/${usuario._id}`, usuario)
+      await mostrarUsuarios()
+    } catch (error
+    ) {
+      console.log(error)
+    }
+  };
+
+  // DELETE
+
+  const eliminarUsuario = async (id) =>{
+    try {
+      await axios.delete(`http://localhost:8081/api/usuarios//eliminarUsuario/${id}`);
+      const usuarioEliminado = usuarios.filter((usuario)=> usuario._id !== id);
+      setUsuarios(usuarioEliminado);
+      // localStorage.removeItem(usuarioEliminado)
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   useEffect(() => {
     mostrarUsuarios();
@@ -110,6 +129,8 @@ const UsersContext = ({ children }) => {
           logOut,
           mostrarUsuarios,
           login,
+          editarUsuario,
+          eliminarUsuario,
           usuarioIngresado,
         }}
       >
