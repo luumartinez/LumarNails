@@ -3,8 +3,8 @@
     background: linear-gradient(to bottom, #30031b, #f977bc);
     min-height: 87.5vh;
     padding: 0;
+    border:1px solid #30031b
 }
-
 .contenedorTitAdm{
     display: inline-block;
     justify-content: center;
@@ -28,9 +28,30 @@
     text-align: center;
 }
 
+.botonAgregarProd{
+    width: 30%;
+    height: 40px;
+    background-color: rgb(249, 119, 188);
+    border-radius: 10px;
+    text-decoration: none;
+    color: rgb(52, 52, 52);
+    border: none;
+    font-weight:bolder;
+}
+
+.botonAgregarProd:hover{
+    background-color: rgb(244, 155, 202);
+    box-shadow: 2px 2px 2px rgb(249, 119, 188);
+    transition: 0.2s;
+}
+
 @media (min-width: 340px) and (max-width: 600px){
 
     .contenedorContenido{
         margin-top: 30%;
+    }
+
+    .botonAgregarProd{
+        width: 90%;
     }
 }

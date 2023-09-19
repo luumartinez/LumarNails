@@ -46,3 +46,9 @@
     transition: 0.3s;
     background-color: #f23030;
   }
+
+  .bodyModalEditProd{
+    background-color: rgba(48, 3, 27);
+    border-radius:5px;
+    color:rgb(249, 119, 188);
+  }

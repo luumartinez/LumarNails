@@ -1,15 +1,13 @@
 import { useState, useContext } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { ProductosContexto } from "../../context/ProductosContext";
-import Swal from 'sweetalert2'
 
-const FormAgregarProd = () => {
+const FormAgregarProd = ({handleCloseAgregar}) => {
   const { agregarProducto } = useContext(ProductosContexto);
 
   const [productos, setProductos] = useState({
     nombre: "",
-    precio: "",
-    // stock: "",
+    precio: ""
   });
 
   const handleChange = (e) => {
@@ -18,21 +16,13 @@ const FormAgregarProd = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     agregarProducto(productos);
-    Swal.fire({
-      position: "center",
-      icon: "success",
-      title: "Producto agregado",
-      showConfirmButton: false
-    },
-    setTimeout(() => {
-      window.location.href = "/tienda";
-    }, 1500));
     setProductos({
       producto: "",
-      precio: "",
-      stock: "",
+      precio: ""
     });
+    handleCloseAgregar();
   };
 
   return (
@@ -52,6 +42,7 @@ const FormAgregarProd = () => {
                   value={productos.nombre}
                   onChange={handleChange}
                   aria-describedby="nombre"
+                  required
                 ></input>
               </div>
               <div className="mb-3">
@@ -65,6 +56,7 @@ const FormAgregarProd = () => {
                   value={productos.precio}
                   onChange={handleChange}
                   aria-describedby="precio"
+                  required
                 ></input>
               </div>
               {/* <div className="mb-3">
@@ -80,10 +72,12 @@ const FormAgregarProd = () => {
                   aria-describedby="stock"
                 ></input>
               </div> */}
-              <Button type="submit" className="btn btn-primary">
+              <div className="d-flex justify-content-center">
+              <button type="submit" className="botonAgregarProd">
                 {" "}
-                Agregar producto{" "}
-              </Button>
+                AGREGAR{" "}
+              </button>
+              </div>
             </form>
           </Col>
         </Row>

@@ -1,9 +1,16 @@
 import TablaProductos from "../../components/productos/TablaProductos";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button, Modal } from "react-bootstrap";
 import "./administracion.css";
 import TablaUsuarios from "../../components/usuarios/TablaUsuarios";
+import { useState } from "react";
+import FormAgregarProd from "../../components/productos/FormAgregarProd";
 
 const Administracion = () => {
+
+  const [showAgregar, setShowAgregar] = useState(false);
+  const handleCloseAgregar = () => setShowAgregar(false);
+  const handleShowAgregar = () => setShowAgregar(true);
+
   return (
     <>
       <div className="contenedorPagAdm">
@@ -15,6 +22,9 @@ const Administracion = () => {
             <div className="contenedorTitTablaProd">
               <h2>PRODUCTOS</h2>
             </div>
+              <div className="d-flex justify-content-center mb-3">         
+              <button className="botonAgregarProd" onClick={handleShowAgregar}>AGREGAR PRODUCTO</button>
+              </div>  
             <div className="tablaProd">
               <TablaProductos />
             </div>
@@ -29,6 +39,12 @@ const Administracion = () => {
           </div>
         </div>
       </div>
+
+      <Modal centered show={showAgregar} onHide={handleCloseAgregar}>
+        <Modal.Body className="bodyModalEditProd">
+          <FormAgregarProd handleCloseAgregar={handleCloseAgregar} />
+        </Modal.Body>
+      </Modal>
     </>
   );
 };

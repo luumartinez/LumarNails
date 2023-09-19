@@ -53,11 +53,11 @@ const NavbarWeb = () => {
             <Nav className="barraTexto ms-auto">
               {usuarioIngresado?.rol === "admin" ? (
                 <>
-                  <NavDropdown title="PRODUCTOS" id="basic-nav-dropdown">
+                  {/* <NavDropdown title="PRODUCTOS" id="basic-nav-dropdown">
                     <NavDropdown.Item href="agregarproductos">
                       Cargar productos
                     </NavDropdown.Item>
-                  </NavDropdown>
+                  </NavDropdown> */}
                   <Nav.Link className="nav-link" href="/administracion">
                     ADMINISTRACIÓN
                   </Nav.Link>

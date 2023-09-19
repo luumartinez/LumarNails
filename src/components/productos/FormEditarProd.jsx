@@ -2,12 +2,12 @@ import { useState, useContext } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { ProductosContexto } from "../../context/ProductosContext";
 import Swal from "sweetalert2";
+import "./formEditarProd.css";
 
 const FormEditarProd = ({ editarProd, handleClose }) => {
   const [producto, setProducto] = useState(editarProd);
 
   const { actualizarProducto } = useContext(ProductosContexto);
-
 
   const handleChange = (e) => {
     setProducto({ ...producto, [e.target.name]: e.target.value });
@@ -19,12 +19,13 @@ const FormEditarProd = ({ editarProd, handleClose }) => {
     Swal.fire({
       title: "Cambios guardados con éxito",
       icon: "success",
+      background: "#fed9ed ",
+      color: "grey",
       showConfirmButton: false,
-      timer: 1000,
-  });
-  handleClose();
-}
-  
+      timer: 1200,
+    });
+    handleClose();
+  };
 
   return (
     <>
@@ -32,6 +33,10 @@ const FormEditarProd = ({ editarProd, handleClose }) => {
         <Row>
           <Col>
             <form onSubmit={handleEdit}>
+              <div className="d-flex justify-content-end">
+                <h5 className="btn-close" onClick={handleClose}></h5>
+              </div>
+              <h1 className="d-flex justify-content-center">EDITAR PRODUCTO</h1>
               <div className="mb-3">
                 <label htmlFor="nombre" className="form-label">
                   Nombre
@@ -71,10 +76,12 @@ const FormEditarProd = ({ editarProd, handleClose }) => {
                   aria-describedby="stock"
                 ></input>
               </div> */}
-              <Button type="submit" className="btn btn-primary">
-                {" "}
-                Editar producto{" "}
-              </Button>
+              <div className="d-flex justify-content-center">
+                <Button type="submit" className="botonEditProducto">
+                  {" "}
+                  Editar producto{" "}
+                </Button>
+              </div>
             </form>
           </Col>
         </Row>

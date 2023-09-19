@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { UsuariosContexto } from "../../context/UsuariosContext";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import Swal from "sweetalert2";
-import './formEditarUsuario.css'
+import "./formEditarUsuario.css";
 
 const FormEditarUsuario = ({ editarUsu, handleClose }) => {
   const [usuario, setUsuario] = useState(editarUsu);
@@ -15,12 +15,14 @@ const FormEditarUsuario = ({ editarUsu, handleClose }) => {
 
   const handleEdit = (e) => {
     e.preventDefault();
-    editarUsuario();
+    editarUsuario(usuario);
     Swal.fire({
       title: "Cambios guardados con éxito",
       icon: "success",
+      background: "#fed9ed ",
+      color: "grey",
       showConfirmButton: false,
-      timer: 1000,
+      timer: 1200,
     });
     handleClose();
   };
@@ -32,7 +34,8 @@ const FormEditarUsuario = ({ editarUsu, handleClose }) => {
           <Col>
             <form onSubmit={handleEdit}>
               <div className="d-flex justify-content-end">
-              <h5 className="btn-close" onClick={handleClose}></h5>     </div>
+                <h5 className="btn-close" onClick={handleClose}></h5>
+              </div>
               <h1 className="d-flex justify-content-center">EDITAR USUARIO</h1>
               <div className="mb-3">
                 <label htmlFor="nombre" className="form-label">
@@ -88,10 +91,11 @@ const FormEditarUsuario = ({ editarUsu, handleClose }) => {
                 ></input>
               </div>
               <div className="d-flex justify-content-center">
-              <Button type="submit" className="botonEditUsuario">
-                {" "}
-                Editar usuario{" "}
-              </Button></div>
+                <Button type="submit" className="botonEditUsuario">
+                  {" "}
+                  Editar usuario{" "}
+                </Button>
+              </div>
             </form>
           </Col>
         </Row>

@@ -1,5 +1,6 @@
 import { createContext, useState, useEffect } from "react";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 export const ProductosContexto = createContext();
 
@@ -7,13 +8,32 @@ const ProductosContext = ({ children }) => {
   const [productos, setProductos] = useState([]);
 
   //POST
-  const agregarProducto = (producto) => {
+  const agregarProducto = async (producto) => {
     try {
-      const response = axios.post("http://localhost:8081/api/servicios", producto);
-      console.log(response);
+      const response = await axios.post("http://localhost:8081/api/servicios", producto);
+      
+      if(response.status === 201){
       setProductos([...productos, response]);
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Producto agregado",
+        showConfirmButton: false,
+        background: "#fed9ed ",
+        color: "grey",
+      },
+      setTimeout(()=>{
+        window.location.href = "/administracion";}, 1000))}
     } catch (error) {
-      console.log(error);
+      if (error.response.status === 409){
+        Swal.fire({
+          icon: "error",
+          title: "Este producto ya existe",
+          showConfirmButton: false,
+          background: "#fed9ed ",
+          color: "grey",
+        });
+      }
     }
   };
 

@@ -87,11 +87,9 @@ const TablaProductos = () => {
           })}
         </table>
       </Container>
+
       <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>EDICION DE PRODUCTO</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
+        <Modal.Body className="bodyModalEditProd">
           <FormEditarProd editarProd={editarProd} handleClose={handleClose} />
         </Modal.Body>
       </Modal>
