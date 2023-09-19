@@ -1,0 +1,50 @@
+.contenedorTarjetasTienda{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    border: 2px solid red;
+    gap:20px;
+}
+
+.contenedorTarjeta{
+    height: max-content;
+    border: none;
+    border-radius: 10px;
+    margin-top: 2px;
+    display: flex;
+    width: 80%;
+    border: 2px solid blue;
+}
+
+.tarjetaTienda{
+    background-color: #30031bbe;
+    color: grey;
+    width: 20%;
+    height: max-content;
+    border: none;
+    border-radius: 10px;
+    margin: 2px;
+    text-align: center;
+    
+}
+
+.tarjetaTienda:hover{
+    border: 2px solid #30031b;
+    transition: 0.3s;
+}
+
+.botonTarjetaTienda{
+    width: 100%;
+    background-color: rgb(249, 119, 188);
+    border-radius: 10px;
+    text-decoration: none;
+    color: rgb(52, 52, 52);
+    border: none;
+    font-weight:bolder;
+}
+
+.botonTarjetaTienda:hover{
+    background-color: rgb(244, 155, 202);
+    box-shadow: 2px 2px 2px rgb(249, 119, 188);
+    transition: 0.2s;
+}

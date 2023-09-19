@@ -2,12 +2,12 @@ import { useState, useContext } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { ProductosContexto } from "../../context/ProductosContext";
 
-const FormAgregarProd = ({handleCloseAgregar}) => {
+const FormAgregarProd = ({ handleCloseAgregar }) => {
   const { agregarProducto } = useContext(ProductosContexto);
 
   const [productos, setProductos] = useState({
     nombre: "",
-    precio: ""
+    precio: "",
   });
 
   const handleChange = (e) => {
@@ -20,7 +20,7 @@ const FormAgregarProd = ({handleCloseAgregar}) => {
     agregarProducto(productos);
     setProductos({
       producto: "",
-      precio: ""
+      precio: "",
     });
     handleCloseAgregar();
   };
@@ -29,7 +29,8 @@ const FormAgregarProd = ({handleCloseAgregar}) => {
     <>
       <Container>
         <Row>
-          <Col>
+      <Col>
+      <h2 className="d-flex justify-content-center">CARGAR PRODUCTO</h2>
             <form onSubmit={handleSubmit}>
               <div className="mb-3">
                 <label htmlFor="nombre" className="form-label">
@@ -73,10 +74,10 @@ const FormAgregarProd = ({handleCloseAgregar}) => {
                 ></input>
               </div> */}
               <div className="d-flex justify-content-center">
-              <button type="submit" className="botonAgregarProd">
-                {" "}
-                AGREGAR{" "}
-              </button>
+                <button type="submit" className="botonAgregarProd">
+                  {" "}
+                  AGREGAR{" "}
+                </button>
               </div>
             </form>
           </Col>

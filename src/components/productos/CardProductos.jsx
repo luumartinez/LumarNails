@@ -1,19 +1,22 @@
 import { useContext } from "react";
 import { Card } from "react-bootstrap";
 import { ProductosContexto } from "../../context/ProductosContext";
+import './cardProductos.css'
+import imgTienda from "../../img/imgTienda.jpg"
 
 const CardProductos = () => {
   const { productos } = useContext(ProductosContexto);
 
   return (
     <>
-      {productos === undefined ? (
+      {/* {productos === undefined ? (
         <h1>No hay productos</h1>
       ) : (
         productos.map((producto) => {
           return (
             <div key={producto._id}>
-              <Card style={{ width: "18rem" }}>
+              <div className="contenedorTarjeta">
+              <Card className="cardTienda" style={{ width: "18rem" }}>
                 <Card.Body>
                   <Card.Title>{producto.nombre}</Card.Title>
                   <Card.Subtitle className="mb-2 text-muted">
@@ -22,9 +25,29 @@ const CardProductos = () => {
                 </Card.Body>
               </Card>
             </div>
+            </div>
           );
         })
+      )} */}
+      <div className="contenedorTarjetasTienda">
+      {productos === undefined ? (
+        <h1>No hay productos</h1>
+      ) : (
+        <div className="contenedorTarjeta">
+          {productos.map((producto) => (
+            <Card key={producto._id} className="tarjetaTienda">
+              <Card.Body>
+                <Card.Title>{producto.nombre}</Card.Title>
+                <Card.Subtitle className="mb-2 text-muted">
+                  ${producto.precio}
+                </Card.Subtitle>
+                <button className="botonTarjetaTienda">COMPRAR</button>
+              </Card.Body>
+            </Card>
+          ))}
+        </div>
       )}
+    </div>
     </>
   );
 };

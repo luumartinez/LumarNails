@@ -64,7 +64,7 @@ const TablaProductos = () => {
                 <tbody className="tbodyProd" key={producto._id}>
                   <tr>
                     <td>{producto.nombre}</td>
-                    <td>{producto.precio}</td>
+                    <td>${producto.precio}</td>
                     <td>
                       <button
                         className="btn botonEditProd m-1"

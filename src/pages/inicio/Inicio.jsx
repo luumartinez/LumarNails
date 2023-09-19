@@ -45,13 +45,13 @@ const Inicio = () => {
           <Clima />
         </div> */}
         <div className="contenedorTarjetas mt-3">
-          <div className="card">
+          <div className="tarjetaInicio">
             <img
               src={imagenServicios}
               className="card-img-top"
               alt="servicio de esmaltado"
             />
-            <div className="card-body">
+            <div className="bodyTarjetaInicio">
               <h5 className="card-title d-flex justify-content-center">
                 SERVICIOS
               </h5>
@@ -66,9 +66,9 @@ const Inicio = () => {
                 </div>
             </div>
           </div>
-          <div className="card">
+          <div className="tarjetaInicio">
             <img src={imagenEsmalte} className="card-img-top" alt="productos" />
-            <div className="card-body">
+            <div className="bodyTarjetaInicio">
               <h5 className="card-title d-flex justify-content-center">
                 PRODUCTOS
               </h5>

@@ -1,0 +1,47 @@
+.contenedorPagTienda{
+    min-height: 100vh;
+    width: 100%;
+    margin:0;
+    padding: 0;
+    background-color: rgba(255, 192, 203, 0.5);
+}
+
+.contenedorEncabezadoTienda{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    position: sticky;
+}
+
+.contenedorImgTienda{
+   width: 100%;
+   margin-top: -30%;
+}
+
+.imgTienda{
+    /* height: 500px; */
+    filter: opacity(80%);
+    width: 100%;
+    /* border-radius: 0px 0px 100px 100px; */
+}
+
+.contenedorMayorTituloTienda{
+    display:flex;
+    justify-content: center;
+}
+
+.contenedorTitTienda{
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    z-index: 2;
+}
+
+.tituloTienda {
+    color: rgb(249, 119, 188);
+    text-align: center;
+  }
