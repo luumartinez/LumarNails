@@ -7,16 +7,18 @@ import ProductosContexto from "./context/ProductosContext";
 import UsuariosContexto from "./context/UsuariosContext";
 import NavbarWeb from "./components/navbar/NavbarWeb";
 import TablaUsuarios from "./components/usuarios/TablaUsuarios";
-
+import TurnosContexto from "./context/TurnosContext";
 
 const App = () => {
   return (
     <>
       <UsuariosContexto>
         <ProductosContexto>
-          <NavbarWeb />
-          <Rutas />
-          <Footer />
+          <TurnosContexto>
+            <NavbarWeb />
+            <Rutas />
+            <Footer />
+          </TurnosContexto>
         </ProductosContexto>
       </UsuariosContexto>
     </>

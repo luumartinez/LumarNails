@@ -57,3 +57,9 @@
     box-shadow: 2px 2px 2px rgb(249, 119, 188);
     transition: 0.2s;
 }
+
+.bodyModalTurnos{
+    background-color: #30031b;
+    color:#f977bc;
+    border-radius: 5px;
+}

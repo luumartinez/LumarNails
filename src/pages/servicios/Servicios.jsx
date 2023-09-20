@@ -1,10 +1,17 @@
-import { Card, Button } from "react-bootstrap";
+import { Card, Button, Modal } from "react-bootstrap";
 import imgSemi from "../../img/serviciosemi.jpg";
 import imgRusa from "../../img/serviciorusa.jpg";
 import imgLash from "../../img/serviciolash.jpg";
 import "./servicios.css";
+import { useState } from "react";
+import FormTurnos from "../../components/turnos/FormTurnos";
 
 const Servicios = () => {
+
+  const [showTurnos, setShowTurnos] = useState(false)
+  const handleCloseTurnos = () => setShowTurnos(false)
+  const handleShowTurnos = () => setShowTurnos(true)
+
   return (
     <>
       <div className="contenedorPagServicios">
@@ -30,7 +37,7 @@ const Servicios = () => {
                     duraderas con nuestra manicura rusa. ¡Reserva tu cita hoy
                     mismo y descubre el arte en cada detalle!
                   </Card.Text>
-                  <button className="botonTurnoServicio">PEDIR TURNO</button>
+                  <button className="botonTurnoServicio" onClick={handleShowTurnos}>PEDIR TURNO</button>
                 </Card.Body>
               </div>
             </div>
@@ -51,7 +58,7 @@ const Servicios = () => {
                     semipermanente que hace que tus uñas luzcan radiantes por
                     mucho más tiempo!
                   </Card.Text>
-                  <button className="botonTurnoServicio">PEDIR TURNO</button>
+                  <button className="botonTurnoServicio"onClick={handleShowTurnos}>PEDIR TURNO</button>
                 </Card.Body>
               </div>
               <div className="col-md-7">
@@ -83,13 +90,17 @@ const Servicios = () => {
                     centro de atención sin esfuerzo. ¡Reserva ahora y descubre
                     la magia de unas pestañas encantadoras
                   </Card.Text>
-                  <button className="botonTurnoServicio">PEDIR TURNO</button>
+                  <button className="botonTurnoServicio" onClick={handleShowTurnos}>PEDIR TURNO</button>
                 </Card.Body>
               </div>
             </div>
           </Card>
         </div>
       </div>
+
+      <Modal show={showTurnos} onHide={handleCloseTurnos}>
+        <Modal.Body className="bodyModalTurnos"><FormTurnos /></Modal.Body>
+      </Modal>
     </>
   );
 };
