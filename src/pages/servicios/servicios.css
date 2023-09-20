@@ -1,0 +1,59 @@
+.contenedorPagServicios{
+    background-color: rgba(255, 192, 203, 0.5);
+    min-height: 87.5vh;
+    padding: 0;
+    border:1px solid rgba(255, 192, 203, 0.5);
+    max-width: 100%;
+}
+
+.contenedorServicios{
+    /* border: 2px solid blue; */
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    margin-top: 8%;
+    margin-bottom: 0;
+}
+
+.tarjetaServicios{
+    background-color: rgba(139, 69, 19, 0);
+    border: none;
+}
+.tituloTarjServ{
+    color:#f977bc;
+    background-color: #30031b;
+    border-radius: 10px;
+}
+
+.textoTarjServ{
+    color:#30031b;
+}
+
+.imgSemi, .imgRusa, .imgLash{
+    height: 400px;
+    filter: grayscale(80%);
+}
+
+.imgSemi:hover, .imgRusa:hover, .imgLash:hover{
+    filter: grayscale(0);
+    transition: 0.5s;
+}
+
+.botonTurnoServicio{
+    width: 80%;
+    height: 40px;
+    background-color: rgb(249, 119, 188);
+    border-radius: 10px;
+    text-decoration: none;
+    color: rgb(52, 52, 52);
+    border: none;
+    font-weight:bolder;
+}
+
+.botonTurnoServicio:hover{
+    background-color: rgb(244, 155, 202);
+    box-shadow: 2px 2px 2px rgb(249, 119, 188);
+    transition: 0.2s;
+}

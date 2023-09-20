@@ -38,7 +38,8 @@
     background-color: rgb(249, 119, 188);
     border-radius: 10px;
     text-decoration: none;
-    color: rgb(52, 52, 52);
+    /* color: rgb(52, 52, 52); */
+    color:aliceblue;
     border: none;
     font-weight:bolder;
 }

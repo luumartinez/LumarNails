@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { Card } from "react-bootstrap";
 import { ProductosContexto } from "../../context/ProductosContext";
 import './cardProductos.css'
-import imgTienda from "../../img/imgTienda.jpg"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const CardProductos = () => {
   const { productos } = useContext(ProductosContexto);
@@ -41,7 +41,7 @@ const CardProductos = () => {
                 <Card.Subtitle className="mb-2 text-muted">
                   ${producto.precio}
                 </Card.Subtitle>
-                <button className="botonTarjetaTienda">COMPRAR</button>
+                <button className="botonTarjetaTienda"><FontAwesomeIcon icon="fa-solid fa-cart-shopping" /></button>
               </Card.Body>
             </Card>
           ))}

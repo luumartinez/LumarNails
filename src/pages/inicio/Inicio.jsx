@@ -56,12 +56,11 @@ const Inicio = () => {
                 SERVICIOS
               </h5>
               <p className="card-text">
-              This card has supporting text below as a natural lead-in to
-                additional content.
+              En solo un clic, podrás asegurarte un momento de relajación y cuidado personal. ¡No esperes más y reserva tu turno ahora mismo!
               </p>
               <div className="contenedorBotonTarjeta">
-                <button className="botonTarjeta" href="/tienda">
-                  RESERVA TU TURNO
+                <button className="botonTarjeta" onClick={(e) => window.location.href="/servicios"}>
+                  CONOCER NUESTROS SERVICIOS
                 </button>
                 </div>
             </div>
@@ -77,7 +76,7 @@ const Inicio = () => {
                 additional content.
                 </p>
                 <div className="contenedorBotonTarjeta">
-                <button className="botonTarjeta" href="/tienda">
+                <button className="botonTarjeta" onClick={(e) => window.location.href="/tienda"}>
                   IR A LA TIENDA
                 </button>
                 </div>
