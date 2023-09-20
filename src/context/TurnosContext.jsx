@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
 
@@ -6,6 +6,20 @@ export const TurnosContexto = createContext();
 
 const TurnosContext = ({ children }) => {
   const [turnos, setTurnos] = useState([]);
+
+  //GET 
+  const turnosAgendados = async()=>{
+    try {
+      const response = await axios.get("http://localhost:8081/api/turnos/turnosAgendados")
+      setTurnos(response.data)
+    } catch (error) {
+      console.log(error)
+    }
+  };
+
+  useEffect(()=>{
+    turnosAgendados();
+  }, []);
 
   //POST
 
@@ -42,7 +56,7 @@ const TurnosContext = ({ children }) => {
 
   return (
     <>
-      <TurnosContexto.Provider value={{ turnos, agendarTurno }}>
+      <TurnosContexto.Provider value={{ turnos, agendarTurno, turnosAgendados }}>
         {children}
       </TurnosContexto.Provider>
     </>

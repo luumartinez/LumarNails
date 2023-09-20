@@ -1,0 +1,27 @@
+.tablaTurnos{
+    background-color: #f977bcd0;
+    color: grey;
+    font-size: x-large;
+    border: none;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 8px;
+    max-width: 100%;
+}
+
+.tbodyTurnos{
+    border-bottom: 2px solid rgb(190, 64, 131);
+    color: #412d38;
+}
+
+.tbodyTurnos:hover{
+    transition: 0.3s;
+    background-color: #f977bc;
+}
+
+.trTurnos{
+    background-color: rgb(190, 64, 131);
+    color: #30031b;
+}

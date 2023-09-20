@@ -4,6 +4,7 @@ import "./administracion.css";
 import TablaUsuarios from "../../components/usuarios/TablaUsuarios";
 import { useState } from "react";
 import FormAgregarProd from "../../components/productos/FormAgregarProd";
+import TablaTurnos from "../../components/turnos/TablaTurnos";
 
 const Administracion = () => {
 
@@ -35,6 +36,14 @@ const Administracion = () => {
             </div>
             <div className="tablaProd">
               <TablaUsuarios />
+            </div>
+          </div>
+          <div className="contenedorTablaProd">
+            <div className="contenedorTitTablaProd">
+              <h2>TURNOS</h2>
+            </div>
+            <div className="tablaProd">
+              <TablaTurnos />
             </div>
           </div>
         </div>
