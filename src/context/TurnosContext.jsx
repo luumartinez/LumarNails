@@ -54,9 +54,18 @@ const TurnosContext = ({ children }) => {
       }
   };
 
+  const editarTurno = async (turno)=>{
+    try {
+      await axios.put(`http://localhost:8081/api/turnos/${turno._id}`, turno);
+      await turnosAgendados()
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   return (
     <>
-      <TurnosContexto.Provider value={{ turnos, agendarTurno, turnosAgendados }}>
+      <TurnosContexto.Provider value={{ turnos, agendarTurno, turnosAgendados, editarTurno }}>
         {children}
       </TurnosContexto.Provider>
     </>

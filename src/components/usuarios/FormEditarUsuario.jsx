@@ -48,6 +48,7 @@ const FormEditarUsuario = ({ editarUsu, handleClose }) => {
                   value={usuario.nombre}
                   onChange={handleChange}
                   aria-describedby="nombre"
+                  required
                 ></input>
               </div>
               <div className="mb-3">
@@ -61,6 +62,7 @@ const FormEditarUsuario = ({ editarUsu, handleClose }) => {
                   value={usuario.apellido}
                   onChange={handleChange}
                   aria-describedby="apellido"
+                  required
                 ></input>
               </div>
               <div className="mb-3">
@@ -72,7 +74,7 @@ const FormEditarUsuario = ({ editarUsu, handleClose }) => {
                   className="form-control"
                   name="email"
                   value={usuario.email}
-                  onChange={handleChange}
+                  // onChange={handleChange}
                   aria-describedby="email"
                   disabled
                 ></input>
@@ -88,6 +90,7 @@ const FormEditarUsuario = ({ editarUsu, handleClose }) => {
                   value={usuario.rol}
                   onChange={handleChange}
                   aria-describedby="rol"
+                  required
                 ></input>
               </div>
               <div className="d-flex justify-content-center">

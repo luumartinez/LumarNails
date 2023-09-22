@@ -3,12 +3,11 @@
     color: grey;
     font-size: x-large;
     border: none;
-    display: inline-block;
-    justify-content: center;
-    align-items: center;
     text-align: center;
     border-radius: 8px;
-    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 10px;
 }
 
 .tbodyTurnos{
@@ -25,3 +24,35 @@
     background-color: rgb(190, 64, 131);
     color: #30031b;
 }
+
+.bodyEditarTurno{
+  background-color: #30031b;
+  color:#f977bc
+}
+
+@media (max-width: 767px) {
+
+    .tablaTurnos th {
+      font-size: medium;
+    }
+  
+    .tablaTurnos th, .tablaTurnos td {
+      text-align: center;
+    }
+  
+    .tablaTurnos tbody {
+      display: block;
+    }
+  
+    .tablaTurnos tr {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .tablaTurnos td {
+      width: 100%;
+      box-sizing: border-box;
+    }
+  }

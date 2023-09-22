@@ -97,7 +97,7 @@ const handleChange = (e) =>{
             type="text"
             className="form-control"
             name="servicio"
-            vale={turnos.email}
+            vale={turnos.servicio}
             onChange={handleChange}
             required
           ></input>
