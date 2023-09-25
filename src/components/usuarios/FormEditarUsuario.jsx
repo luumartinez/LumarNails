@@ -71,7 +71,7 @@ const FormEditarUsuario = ({ editarUsu, handleClose }) => {
                 </label>
                 <input
                   type="email"
-                  className="form-control"
+                  className="deshabilitado"
                   name="email"
                   value={usuario.email}
                   // onChange={handleChange}
@@ -94,10 +94,9 @@ const FormEditarUsuario = ({ editarUsu, handleClose }) => {
                 ></input>
               </div>
               <div className="d-flex justify-content-center">
-                <Button type="submit" className="botonEditUsuario">
-                  {" "}
-                  Editar usuario{" "}
-                </Button>
+                <button type="submit" className="botonEditUsuario">
+                  Editar usuario
+                </button>
               </div>
             </form>
           </Col>

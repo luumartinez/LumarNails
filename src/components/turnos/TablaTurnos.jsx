@@ -3,10 +3,11 @@ import { Container, Modal } from "react-bootstrap";
 import { TurnosContexto } from "../../context/TurnosContext";
 import "./tablaTurnos.css";
 import FormEditarTurno from "./FormEditarTurno";
+import Swal from "sweetalert2";
 
 const TablaTurnos = () => {
 
-  const { turnos } = useContext(TurnosContexto);
+  const { turnos, eliminarTurno } = useContext(TurnosContexto);
 
   const [showEditarTur, setShowEditarTur] = useState(false);
 
@@ -18,6 +19,33 @@ const TablaTurnos = () => {
   const handleEdit = (turno) =>{
     handleShowEditarTur();
     setEditarTur(turno);
+  }
+
+  const handleDelete = (id) =>{
+    Swal.fire({
+      title: '¿Seguro que quieres cancelar este turno?',
+      text: "Una vez cancelado, no podrás recuperarlo",
+      icon: 'warning',
+      showCancelButton: true,
+      background: "#fed9ed ",
+      color: "grey",
+      confirmButtonColor: '#e84e4e',
+      cancelButtonColor: '#2d7d97', 
+      confirmButtonText: 'Borrar',
+      cancelButtonText:'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) { 
+        eliminarTurno(id);
+        Swal.fire({
+          title: 'Turno cancelado con éxito',
+          icon: 'success',
+          background: "#fed9ed ",
+          color: "grey",
+          showConfirmButton:false,
+          timer: 1200
+       })
+      }
+    })
   }
 
 
@@ -52,7 +80,7 @@ const TablaTurnos = () => {
                     </button>
                     <button
                       className="btn botonElimProd"
-                      // onClick={() => handleDelete(producto._id)}
+                      onClick={() => handleDelete(turno._id)}
                     >
                       Eliminar
                     </button>

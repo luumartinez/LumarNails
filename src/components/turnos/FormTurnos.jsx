@@ -1,39 +1,39 @@
 import { useContext, useState } from "react";
 import { TurnosContexto } from "../../context/TurnosContext";
-import "./formTurnos.css"
+import "./formTurnos.css";
 
 const FormTurnos = () => {
   const { agendarTurno } = useContext(TurnosContexto);
 
   const [turnos, setTurnos] = useState({
-    nombre:"",
-    apellido:"",
-    fecha:"",
-    hora:"",
-    servicio:""
+    nombre: "",
+    apellido: "",
+    fecha: "",
+    hora: "",
+    servicio: "",
   });
 
-const handleChange = (e) =>{
-    setTurnos({...turnos, [e.target.name]: e.target.value})
-};
+  const handleChange = (e) => {
+    setTurnos({ ...turnos, [e.target.name]: e.target.value });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     agendarTurno(turnos);
     setTurnos({
-        nombre:"",
-        apellido:"",
-        fecha:"",
-        hora:"",
-        servicio:""
-    })
+      nombre: "",
+      apellido: "",
+      fecha: "",
+      hora: "",
+      servicio: "",
+    });
   };
 
   return (
     <>
-    <div className="tituloFormTurno d-flex justify-content-center">
+      <div className="tituloFormTurno d-flex justify-content-center">
         <h3>AGENDAR TURNO</h3>
-    </div>
+      </div>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="nombre" className="form-label">
@@ -93,17 +93,25 @@ const handleChange = (e) =>{
           <label htmlFor="servicio" className="form-label">
             Servicio
           </label>
-          <input
+          <select
             type="text"
             className="form-control"
             name="servicio"
             vale={turnos.servicio}
             onChange={handleChange}
             required
-          ></input>
+          >
+            <option>Elegí un opción</option>
+            <option value="1">Semi permanente</option>
+            <option value="2">Lifting de pestañas</option>
+            <option value="3">Soft gel</option>
+            <option value="4">Capping</option>
+          </select>
         </div>
         <div className="d-flex justify-content-center">
-        <button type="submit" className="botonAgendarTurno">AGENDAR</button>
+          <button type="submit" className="botonAgendarTurno">
+            AGENDAR
+          </button>
         </div>
       </form>
     </>
