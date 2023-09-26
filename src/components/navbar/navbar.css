@@ -2,7 +2,6 @@
     background-color: rgba(245, 245, 245, 0);
     position: fixed;
     top: 0;
-    /* border: 2px solid green; */
     width: 100%;
     z-index: 2;
     transition: background-color 0.3s ease-in-out;
@@ -39,11 +38,11 @@
   }
   
   .contenedorImgLogo {
-    display: flex;
+    display:flex;
     justify-content:center;
     align-items: center;
     width: 100%;
-    /* border: 2px solid blue; */
+    margin-inline-start: 22%;
   }
   
   .logoLumar {
@@ -81,12 +80,27 @@
     color:rgb(249, 119, 188);
   }
   
+  .barraTexto{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+  }
+
+  .contenedorNav{
+    border:2px solid greenyellow;
+    width: 100%;
+  }
   @media (min-width: 360px) and (max-width: 599px){
     .contenedorImgLogo {
-      /* display: flex; */
       justify-content: start;
-      /* align-items: center;
-      width: 100%; */
       margin-left: -12px;
+    }
+  }
+
+  @media (min-width: 760px) and (max-width: 920px){
+    .contenedorImgLogo {
+      justify-content: start;
+      margin-left: 0%;
     }
   }

@@ -4,7 +4,7 @@ import "./inicio.css";
 import videoEsmaltado from "../../img/esmaltadovideo.mp4";
 import imagenServicios from "../../img/serviciosLumar.jpg";
 import imagen1 from "../../img/coloresNails.jpg";
-import imagen2 from "../../img/floresNails.jpg"
+import imagen2 from "../../img/floresNails.jpg";
 import imagen3 from "../../img/descarga.jpg";
 import imagen4 from "../../img/degradeNails.jpg";
 import imagen5 from "../../img/nailsRosas.jpg";
@@ -15,13 +15,13 @@ const Inicio = () => {
       <div className="contenedorPagPpal container-fluid">
         <div className="contenedorEncabezadoPpal container-fluid">
           <div className="contendorPpalTitulo">
-          <div className="contenedorTitulo">
-            <h1 className="tituloPpal">
-              MIMOS PARA TUS MANOS,
-              <br></br>
-              AMOR POR TUS UÑAS
-            </h1>
-          </div>
+            <div className="contenedorTitulo">
+              <h1 className="tituloPpal">
+                MIMOS PARA TUS MANOS,
+                <br></br>
+                AMOR POR TUS UÑAS
+              </h1>
+            </div>
           </div>
           <div className="contenedorVideo">
             <video
@@ -56,13 +56,18 @@ const Inicio = () => {
                 SERVICIOS
               </h5>
               <p className="card-text">
-              En solo un clic, podrás asegurarte un momento de relajación y cuidado personal. ¡No esperes más y reserva tu turno ahora mismo!
+                En solo un clic, podrás asegurarte un momento de relajación y
+                cuidado personal. ¡No esperes más y reserva tu turno ahora
+                mismo!
               </p>
               <div className="contenedorBotonTarjeta">
-                <button className="botonTarjeta" onClick={(e) => window.location.href="/servicios"}>
+                <button
+                  className="botonTarjeta"
+                  onClick={(e) => (window.location.href = "/servicios")}
+                >
                   CONOCER NUESTROS SERVICIOS
                 </button>
-                </div>
+              </div>
             </div>
           </div>
           <div className="tarjetaInicio">
@@ -72,14 +77,17 @@ const Inicio = () => {
                 PRODUCTOS
               </h5>
               <p className="card-text">
-                This card has supporting text below as a natural lead-in to
-                additional content.
-                </p>
-                <div className="contenedorBotonTarjeta">
-                <button className="botonTarjeta" onClick={(e) => window.location.href="/tienda"}>
+                Encontrá todo lo que necesitas para lucir unas uñas
+                impecables. ¡Descubrí cómo realzar la belleza de tus manos en nuestra tienda!
+              </p>
+              <div className="contenedorBotonTarjeta">
+                <button
+                  className="botonTarjeta"
+                  onClick={(e) => (window.location.href = "/tienda")}
+                >
                   IR A LA TIENDA
                 </button>
-                </div>
+              </div>
             </div>
           </div>
         </div>

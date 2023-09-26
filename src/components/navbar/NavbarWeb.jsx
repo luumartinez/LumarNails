@@ -4,8 +4,9 @@ import { UsuariosContexto } from "../../context/UsuariosContext";
 import { NavDropdown, Navbar, Container, Nav, Modal } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Login from "../login/Login";
+import FormTurnos from "../turnos/FormTurnos";
 
-const NavbarWeb = ({ handleShowTurnos }) => {
+const NavbarWeb = () => {
   const { logOut } = useContext(UsuariosContexto);
   const usuarioIngresado = JSON.parse(localStorage.getItem("usuario"));
 
@@ -15,6 +16,10 @@ const NavbarWeb = ({ handleShowTurnos }) => {
 
   const handleCloseLogin = () => setShowLogin(false);
   const handleShowLogin = () => setShowLogin(true);
+
+  const [showTurnos, setShowTurnos] = useState(false);
+  const handleCloseTurnos = () => setShowTurnos(false);
+  const handleShowTurnos = () => setShowTurnos(true);
 
   useEffect(() => {
     const cambiarFondoNabar = () => {
@@ -38,16 +43,20 @@ const NavbarWeb = ({ handleShowTurnos }) => {
         expand="lg"
       >
         <Container fluid>
-          <Navbar.Brand className="contenedorImgLogo" href="/">
+          <Nav.Link className="contenedorImgLogo" href="/">
             <img
               className="logoLumar"
               src="src/img/LogoLumarRect.png"
               alt="logo Lumar nails"
             />
-          </Navbar.Brand>
+          </Nav.Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse className="justify-content-end">
-            <Nav className="barraTexto ms-auto">
+            <Nav className="barraTexto">
+              <NavDropdown title="TIENDA" id="basic-nav-dropdown">
+                <NavDropdown.Item href="/servicios">SERVICIOS</NavDropdown.Item>
+                <NavDropdown.Item href="/tienda">PRODUCTOS</NavDropdown.Item>
+              </NavDropdown>
               {usuarioIngresado?.rol === "admin" ? (
                 <>
                   <Nav.Link className="nav-link" href="/administracion">
@@ -57,24 +66,18 @@ const NavbarWeb = ({ handleShowTurnos }) => {
               ) : null}
               {usuarioIngresado ? (
                 <>
-                  <Nav.Link className="nav-link" href="/tienda">
-                    TIENDA
+                  <Nav.Link className="nav-link" onClick={handleShowTurnos}>
+                    TURNOS
                   </Nav.Link>
-                  {/* <NavDropdown title="SERVICIOS" id="basic-nav-dropdown">
-                    <NavDropdown.Item href="/servicios">
-                      Mas info
-                    </NavDropdown.Item>
-                    <NavDropdown.Item>
-                      Turnos
-                    </NavDropdown.Item>
-                  </NavDropdown> */}
-                  <Nav.Link className="nav-link">TURNOS</Nav.Link>
                   <Nav.Link className="logoutBot" onClick={logOut}>
                     <FontAwesomeIcon icon="fa-solid fa-door-open" size="lg" />
                   </Nav.Link>
                 </>
               ) : (
                 <>
+                  <Nav.Link className="nav-link" onClick={handleShowLogin}>
+                    TURNOS
+                  </Nav.Link>
                   <Nav.Link className="nav-link " href="/registro">
                     REGISTRO
                   </Nav.Link>
@@ -96,6 +99,12 @@ const NavbarWeb = ({ handleShowTurnos }) => {
       <Modal show={showLogin} size="md" onHide={handleCloseLogin}>
         <Modal.Body className="contenedorBodyLog">
           <Login />
+        </Modal.Body>
+      </Modal>
+
+      <Modal show={showTurnos} onHide={handleCloseTurnos}>
+        <Modal.Body className="bodyModalTurnos">
+          <FormTurnos />
         </Modal.Body>
       </Modal>
     </>

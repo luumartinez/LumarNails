@@ -18,7 +18,7 @@ const Rutas = () =>{
         <Route exact path="/" element={<Inicio />} />
             <Route path="/registro" element={<Registro />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/tienda" onClick={<Login />} element={usuarioLoguado ? <Tienda />  : <Navigate to="/error404" />} />
+            <Route path="/tienda" element={<Tienda />} />
             <Route path="/administracion" element= {rolAdmin ?  <Administracion />  : <Navigate to="/error404" />} />
             <Route path="/servicios" element={<Servicios />} />
             <Route path="/error404" element={<Error404 />} />
