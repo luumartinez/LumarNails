@@ -63,6 +63,7 @@ const UsersContext = ({ children }) => {
           showConfirmButton: false,
           background: "#fed9ed ",
           color: "grey",
+          timer:1200
         });
       }
     }
