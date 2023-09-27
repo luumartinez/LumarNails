@@ -41,6 +41,7 @@ const UsersContext = ({ children }) => {
         const usuario = {
           id: jwtDecode.id,
           nombre: jwtDecode.nombre,
+          apellido: jwtDecode.apellido,
           rol: jwtDecode.rol,
         };
 

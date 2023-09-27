@@ -14,3 +14,10 @@
     box-shadow: 2px 2px 2px rgb(249, 119, 188);
     transition: 0.2s;
 }
+
+.errorMensaje{
+    font-size: small;
+    color: #30031b;
+    display: flex;
+    position: absolute;
+}

@@ -1,9 +1,13 @@
 import { useContext, useState } from "react";
 import { TurnosContexto } from "../../context/TurnosContext";
 import "./formTurnos.css";
+import { UsuariosContexto } from "../../context/UsuariosContext";
 
 const FormTurnos = () => {
   const { agendarTurno } = useContext(TurnosContexto);
+
+  const usuarioActual = localStorage.getItem("usuario");
+  const usuarioJson = JSON.parse(usuarioActual);
 
   const [turnos, setTurnos] = useState({
     nombre: "",
@@ -14,8 +18,26 @@ const FormTurnos = () => {
   });
 
   const handleChange = (e) => {
-    setTurnos({ ...turnos, [e.target.name]: e.target.value });
+    setTurnos({
+      ...turnos,
+      nombre: usuarioJson.nombre,
+      apellido: usuarioJson.apellido,
+      [e.target.name]: e.target.value,
+    });
   };
+
+  const opcionesHora =() =>{
+    const opciones = [];
+    for (let hora = 9; hora <= 20; hora++) {
+      opciones.push(
+        <option key={hora} value={`${hora}:00`}>
+          {`${hora}:00`}
+        </option>
+      );
+    }
+    return opciones;
+  }
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -43,10 +65,12 @@ const FormTurnos = () => {
             type="nombre"
             className="form-control"
             name="nombre"
-            vale={turnos.nombre}
+            value={usuarioJson.nombre}
             onChange={handleChange}
             placeholder="Nombre de quien recibirá el servicio"
-            required
+            minLength="2"
+            maxLength="15"
+            disabled
           ></input>
         </div>
         <div className="mb-3">
@@ -57,10 +81,12 @@ const FormTurnos = () => {
             type="apellido"
             className="form-control"
             name="apellido"
-            vale={turnos.apellido}
+            value={usuarioJson.apellido}
             onChange={handleChange}
             placeholder="Apellido de quien recibirá el servicio"
-            required
+            minLength="2"
+            maxLength="15"
+            disabled
           ></input>
         </div>
         <div className="mb-3">
@@ -77,17 +103,30 @@ const FormTurnos = () => {
           ></input>
         </div>
         <div className="mb-3">
-          <label htmlFor="hora" className="form-label">
+          {/* <label htmlFor="hora" className="form-label">
             Hora
           </label>
           <input
             type="time"
             className="form-control"
             name="hora"
-            vale={turnos.hora}
+            value={turnos.hora}
             onChange={handleChange}
             required
-          ></input>
+          ></input> */}
+          <label htmlFor="hora" className="form-label">
+            Hora
+          </label>
+          <select
+            className="form-control"
+            name="hora"
+            value={turnos.hora}
+            onChange={handleChange}
+            required
+          >
+            <option value="">Hora deseada</option>
+            {opcionesHora()}
+          </select>
         </div>
         <div className="mb-3">
           <label htmlFor="servicio" className="form-label">
@@ -97,7 +136,7 @@ const FormTurnos = () => {
             type="text"
             className="form-control"
             name="servicio"
-            vale={turnos.servicio}
+            value={turnos.servicio}
             onChange={handleChange}
             required
           >
