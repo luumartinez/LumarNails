@@ -36,8 +36,27 @@ const FormTurnos = () => {
       );
     }
     return opciones;
+  };
+
+  const fechaActual = () => {
+  const hoy = new Date();
+  const anio = hoy.getFullYear();
+  const mes = String(hoy.getMonth() + 1).padStart(2, '0'); // Añade ceros iniciales si es necesario
+  const dia = String(hoy.getDate()).padStart(2, '0'); // Añade ceros iniciales si es necesario
+  return `${anio}-${mes}-${dia}`;
+};
+
+const [errorFecha, setErrorFecha] = useState("")
+
+const blurFecha = (e) =>{
+  const fechaSeleccionada = new Date(e.target.value);
+  if (fechaSeleccionada.getDay() === 6) {
+    setErrorFecha("Abierto de lunes a sábados")
+  } else {
+    setErrorFecha("")
+    console.log("bien")
   }
-  
+};
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -63,7 +82,7 @@ const FormTurnos = () => {
           </label>
           <input
             type="nombre"
-            className="form-control"
+            className="deshabilitado"
             name="nombre"
             value={usuarioJson.nombre}
             onChange={handleChange}
@@ -79,7 +98,7 @@ const FormTurnos = () => {
           </label>
           <input
             type="apellido"
-            className="form-control"
+            className="deshabilitado"
             name="apellido"
             value={usuarioJson.apellido}
             onChange={handleChange}
@@ -99,8 +118,10 @@ const FormTurnos = () => {
             vale={turnos.fecha}
             onChange={handleChange}
             name="fecha"
+            min={fechaActual()}
+            onBlur={blurFecha}
             required
-          ></input>
+          ></input><span className="mjeFecha">{errorFecha}</span>
         </div>
         <div className="mb-3">
           {/* <label htmlFor="hora" className="form-label">

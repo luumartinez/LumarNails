@@ -15,9 +15,9 @@
     transition: 0.2s;
 }
 
-.errorMensaje{
-    font-size: small;
-    color: #30031b;
+.mjeFecha{
+    font-size:12px;
+    color: rgb(207, 30, 30);
     display: flex;
     position: absolute;
 }
